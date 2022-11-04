@@ -1,5 +1,3 @@
-// Online Judge Wrong Answer - 83%
-
 #include <stdio.h>
 
 int main()
@@ -8,11 +6,11 @@ int main()
 
     while ( scanf("%d", &restaurantes_existentes) != EOF )
     {
-        codigo_maior = 0;
-        codigo_temp = 0;
+        codigo_maior = -1;
+        codigo_temp = -1;
 
-        nota_maior = 0;
-        nota_temp = 0;
+        nota_maior = -1;
+        nota_temp = -1;
 
         for ( i = 0; i < restaurantes_existentes; i++)
         {
