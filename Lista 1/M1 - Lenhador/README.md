@@ -45,9 +45,9 @@ Para este exercício você deverá implementar a visão matrix deste joguinho, o
 - O lenhador é representado por dois caracteres L nas duas linhas mais abaixo e sempre começa na coluna 3 ou 9;
 - Os galhos são representados por 3 caracteres - que ficam ou à esquerda ou direita da árvore;
 
-- O lenhador pode receber dois comandos: "`- T`" para trocar de lado, ou seja, se ele estiver posicionado na coluna 3, muda para a coluna 9, e vice e versa;
+- O lenhador pode receber dois comandos: "`T`" para trocar de lado, ou seja, se ele estiver posicionado na coluna 3, muda para a coluna 9, e vice e versa;
 
-- Se o lado contrário possui um galho, o lenhador **não** troca de lado "`-B`" para bater na árvore com o machado, se o tronco mais próximo do lenhador for o caractere "`|`" ele vira o caractere > se na coluna 5 ou < se for na coluna 7.
+- Se o lado contrário possui um galho, o lenhador **não** troca de lado "`B`" para bater na árvore com o machado, se o tronco mais próximo do lenhador for o caractere "`|`" ele vira o caractere > se na coluna 5 ou < se for na coluna 7.
 
 - Se já for o caracter < ou > essa linha da árvore é derrubada e todos os galhos descem um nível
 
@@ -65,7 +65,7 @@ No exemplo abaixo o lenhador está em uma situação perdida, pois se derrubar m
 
 ## Entrada
 
-A entrada é composta por um único caso de teste. A primeira linha do caso de teste é composta por um único número inteiro L ( 5 \leq L \leq 1000 ) representando o tamanho total da entrada em linhas. A segunda linha é composta por um único inteiro G ( 2 \leq G \leq L/2 ) indicando quantos galhos estão na árvore, depois serão lidas G linhas, cada uma, contendo 2 inteiros G*{Lado} (G*{Lado} \in \{ E,D \}) e G*{Linha} ( 1 \leq G*{Linha} \leq L) representando, respectivamente, o lado que o galho está, D para direito e E para esquerdo, e a linha em que o galho está. A seguir uma linha contendo um único caractere indicando o lado em que o lenhador começa. A seguir será lida uma única linha contendo uma string C (de tamanho 1 \leq |C| \leq 2000) contendo os comandos que o lenhador recebeu.
+A entrada é composta por um único caso de teste. A primeira linha do caso de teste é composta por um único número inteiro L ( 5 <= L <= 1000 ) representando o tamanho total da entrada em linhas. A segunda linha é composta por um único inteiro G ( 2 <= G <= L/2 ) indicando quantos galhos estão na árvore, depois serão lidas G linhas, cada uma, contendo 2 inteiros `G*{Lado}` ( G _ {Lado} ∈ { E, D } ) e `G_{Linha}` ( 1 <= G\*{Linha} <= L) representando, respectivamente, o lado que o galho está, D para direito e E para esquerdo, e a linha em que o galho está. A seguir uma linha contendo um único caractere indicando o lado em que o lenhador começa. A seguir será lida uma única linha contendo uma string C (de tamanho 1 <= |C| <= 2000) contendo os comandos que o lenhador recebeu.
 
 ## Saída
 
