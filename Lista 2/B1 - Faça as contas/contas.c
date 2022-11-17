@@ -5,7 +5,6 @@ int faz_conta_direito(int parcelas, char op)
     for ( i = 0; i < parcelas; i++)
     {
         scanf("%d", &valores[i]);
-        getc(stdin);
 
         if ( i >= 1 )
         {

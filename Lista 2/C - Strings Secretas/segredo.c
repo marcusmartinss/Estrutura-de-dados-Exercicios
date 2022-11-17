@@ -3,18 +3,14 @@
 
 int main()
 {
-/*     char linha[9], caracter[2];
-    int tamanho_linha;
+    int v[1000], i = 0;
+    while ( scanf( "%x", &v[i] ) == 1 )
+        i++;
+    
+    char *a = v;
+    printf("%s\n", a);
+    // Como o vetor v é um vetor de inteiros,
+    // a string é impressa com a representação gráfica dos numeros.
 
-    while ( scanf("%s", linha) != EOF )
-    {
-        getc(stdin);
-        tamanho_linha = strlen(linha) - 1;
-        while ( tamanho_linha - 2 >= 0 )
-        {
-            caracter[0] = linha[tamanho_linha-1];
-            caracter[1] = linha[tamanho_linha];
-        }        
-    } */
  return 0;
 }
