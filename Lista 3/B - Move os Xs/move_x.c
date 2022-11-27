@@ -1,17 +1,16 @@
 #include <stdio.h>
-#include <string.h>
 
 void move_x(char *string, int i)
 {
     if ( string[i] == '\0' ) return;
-    if ( string[i] != 'x' && string[i] != '\0' ){
+
+    if ( string[i] != 'x' ){
         printf("%c", string[i]);
         move_x(string, i+1);
     } else {
         move_x(string, i+1);
         printf("x");
     }
-
 }
 
 int main(void)
