@@ -2,7 +2,7 @@
 
 int balanceada(int *vetor, int inicio, int fim)
 {
-    if ( (inicio - 1) == (fim + 1) ) return 1;
+    if ( (inicio - 1) == (fim + 2) ) return 1;
 
     if ( (vetor[inicio] + vetor[fim]) != (vetor[inicio+1] + vetor[fim-1]) ) return 0;
 
