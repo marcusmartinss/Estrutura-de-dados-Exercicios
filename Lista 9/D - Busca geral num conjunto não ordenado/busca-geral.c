@@ -9,13 +9,11 @@ typedef long int Item;
 
 long busca_geral(Item *vetor, Item numero, unsigned long pos, unsigned long right)
 {
-    if ( vetor[0] == numero )
-        return pos;
-
-    if ( pos == right )
-        return -1;
+    for (pos = 0; pos < right; pos++)
+        if ( vetor[pos] == numero )
+            return pos;
     
-    busca_geral(&vetor[1], numero, pos+1, right);
+    return -1;
 }
 
 int main()
@@ -33,7 +31,7 @@ int main()
     for (int i = 0; i < m; i++)
     {
         scanf("%ld", &temp);
-        printf( "%ld\n", busca_geral(vetor, temp, 0, n-1) );
+        printf( "%ld\n", busca_geral(vetor, temp, 0, n) );
     }
 
  return 0;
