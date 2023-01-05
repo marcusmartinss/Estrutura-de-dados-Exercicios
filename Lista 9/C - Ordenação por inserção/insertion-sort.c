@@ -14,7 +14,7 @@ void insertionsort(Item *vetor, int left, int right)
             cmpexch(vetor[j-1], vetor[j]);
 
 // Forma mais otimizada com sentinela
-/*
+
     for (int i = right; i > left; i--)
         cmpexch(vetor[i-1], vetor[i]);
 
@@ -30,7 +30,7 @@ void insertionsort(Item *vetor, int left, int right)
         }
         
         vetor[j] = tmp;
-    } */
+    }
 }
 
 int main()
