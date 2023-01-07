@@ -1,11 +1,13 @@
-#define key(A) (A)
-#define less(A, B) (key(A) < key(B))
-#define exch(A, B) { Item t = A; A = B; B = t; }
-#define cmpexch(A, B) { if (less(B, A)) exch(A, B); }
+#define KEY(A) (A)
+#define LESS(A, B) (KEY(A) < KEY(B))
+#define LESSEQ(A, B) (KEY(A) <= KEY(B))
+#define EXCH(A, B) { Item t = A; A = B; B = t; }
+#define CMPEXCH(A, B) { if (LESS(B, A)) EXCH(A, B); }
 
-typedef long int Item;
+typedef int Item;
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {

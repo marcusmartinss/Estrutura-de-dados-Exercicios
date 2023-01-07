@@ -2,6 +2,7 @@
 	"C_Cpp.errorSquiggles": "disabled",
 	"files.associations": {
 		"stdio.h": "c",
-		"*.tcc": "c"
+		"*.tcc": "c",
+		"stdlib.h": "c"
 	}
 }
