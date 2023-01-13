@@ -4,11 +4,7 @@
 #define EXCH(A, B) { Item t = A; A = B; B = t; }
 #define CMPEXCH(A, B) { if (LESS(B, A)) EXCH(A, B); }
 
-typedef struct Item
-{
-	char *palavra_jp = malloc( sizeof(char) * 80 );
-	char *palavra_br = malloc( sizeof(char) * 80 );
-} Item;
+typedef int Item;
 
 #include <stdio.h>
 #include <stdlib.h>
