@@ -36,22 +36,9 @@ int empilhar(struct pilha_st *p, Item e)
  return 1;
 }
 
-int empilhar(struct pilha_st *p, Item e)
+int p_esta_vazia(struct pilha_st *p, Item e)
 {
-	if( p -> size == p -> topo) return 0;
-
-	p -> v[p -> topo++] = e;
-
- return 1;
-}
-
-int empilhar(struct pilha_st *p, Item e)
-{
-	if( p -> size == p -> topo) return 0;
-
-	p -> v[p -> topo++] = e;
-
- return 1;
+	return p -> topo == 0;
 }
 
 Item topo(struct pilha_st *p)
@@ -59,20 +46,7 @@ Item topo(struct pilha_st *p)
 	return p -> v[p -> topo - 1];
 }
 
-int empilhar(struct pilha_st *p, Item e)
+void desempilha(struct pilha_st *p)
 {
-	if( p -> size == p -> topo) return 0;
-
-	p -> v[p -> topo++] = e;
-
- return 1;
-}
-
-int empilhar(struct pilha_st *p, Item e)
-{
-	if( p -> size == p -> topo) return 0;
-
-	p -> v[p -> topo++] = e;
-
- return 1;
+	p -> topo--;
 }
