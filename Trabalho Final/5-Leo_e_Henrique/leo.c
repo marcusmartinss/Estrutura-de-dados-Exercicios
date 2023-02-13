@@ -20,23 +20,6 @@ void inicializaLista(lista *l) {
     l->fim = NULL;
 }
 
-// void insereInicio(lista *l, char *valor) {
-//     no *novo = malloc(sizeof(no));
-//     strcpy(novo->string, valor);
-//     novo->proximo = l->inicio;
-//     novo->anterior = NULL;
-
-//     if (l->inicio != NULL) {
-//         l->inicio->anterior = novo;
-//     }
-
-//     l->inicio = novo;
-
-//     if (l->fim == NULL) {
-//         l->fim = novo;
-//     }
-// }
-
 void insereFim(lista *l, char *valor, int tam) {
     no *novo = malloc(sizeof(no));
     
@@ -56,9 +39,7 @@ void insereFim(lista *l, char *valor, int tam) {
     }
 
     l->fim = novo;
-    
 }
-
 
 int main() 
 {

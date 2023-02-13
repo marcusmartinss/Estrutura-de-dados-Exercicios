@@ -22,65 +22,70 @@ void inicializaLista(lista *l) {
 
 void insereInicio(lista *l, int valor) {
     no *novo = malloc(sizeof(no));
-    novo->valor = valor;
-    novo->proximo = l->inicio;
     novo->anterior = NULL;
+    novo->anterior = NULL;
+    novo->valor = valor;
 
-    if (l->inicio != NULL) {
-        l->inicio->anterior = novo;
-    }
-
-    l->inicio = novo;
-    l->size++;
-
-    if (l->fim == NULL) {
+    if (l->size == 0)
+    {
+        l->inicio = novo;
         l->fim = novo;
     }
+    else
+    {
+        l->inicio->anterior = novo;
+        novo->proximo = l->inicio;
+        l->inicio = novo;
+    }
+    
+    l->size++;
 }
 
 void insereFim(lista *l, int valor) {
     no *novo = malloc(sizeof(no));
-    novo->valor = valor;
     novo->proximo = NULL;
-    novo->anterior = l->fim;
+    novo->anterior = NULL;
+    novo->valor = valor;
 
-    if (l->fim != NULL) {
-        l->fim->proximo = novo;
-    }
-
-    l->fim = novo;
-    l->size++;
-
-    if (l->inicio == NULL) {
+    if (l->size == 0)
+    {
         l->inicio = novo;
+        l->fim = novo;
     }
+    else
+    {
+        l->fim->proximo = novo;
+        novo->anterior = l->fim;
+        l->fim = novo;
+    }
+
+    l->size++;
 }
 
-int removeInicio(lista *h) {
-    no *toRemove = h->inicio;
-    h->inicio = h->inicio->proximo;
+void removeInicio(lista *l) {
+    no *tmp = l->inicio;
+    l->inicio = tmp->proximo;
 
-    if (h->inicio == NULL)
-    {
-        h->fim = NULL;
-    }
-    int ret = toRemove->valor;
-    h->size--;
-    return ret;
+    if (l->inicio == NULL)
+        l->fim = NULL;
+
+    l->size--;
+
+    free(tmp);
 }
 
-int removeUltimo(lista *h) {
-    no *toRemove = h->fim;
-    h->fim = h->fim->anterior;
-    if (h->fim != NULL)
-    {
-        h->fim->proximo = NULL;
-    } else {
-        h->inicio = NULL;
-    }
-    int ret = toRemove->valor;
-    h->size--;
-    return ret;
+void removeUltimo(lista *l) {
+    no *tmp = l->fim;
+    l->fim = tmp->anterior;
+
+    if (l->fim != NULL)
+        l->fim->proximo = NULL;
+    else
+        l->inicio = NULL;
+    
+    l->size--;
+
+    free(tmp);
 }
 
 int main() {
@@ -130,9 +135,11 @@ int main() {
         {
             if (controle_rev == 1)
             {
-                valor = removeInicio(queue);
+                valor = queue->inicio->valor;
+                removeInicio(queue);
             } else {
-                valor = removeUltimo(queue);
+                valor = queue->fim->valor;
+                removeUltimo(queue);
             }
             printf("%d\n", valor);
 
@@ -140,9 +147,11 @@ int main() {
         {
             if (controle_rev == 1)
             {
-                valor = removeUltimo(queue);
+                valor = queue->fim->valor;
+                removeUltimo(queue);
             } else {
-                valor = removeInicio(queue);
+                valor = queue->inicio->valor;
+                removeInicio(queue);
             }
             printf("%d\n", valor);
         }
